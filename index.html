@@ -7,7 +7,7 @@
 <meta name="description" content="15 techno machines from a Stockholm shipyard. BETONG and GLAPP are free. VST3 and AU for Mac and Windows.">
 <meta property="og:title" content="MASKINHALLEN · Techno plugins from Stockholm">
 <meta property="og:description" content="15 techno machines. BETONG and GLAPP are free.">
-<meta property="og:image" content="https://phunkshunz.github.io/maskinhallen/img/og.jpg">
+<meta property="og:image" content="https://phunkshunz.github.io/maskinhallen/payhip/MASKINHALLEN-promo-1200x1200.png">
 <meta name="theme-color" content="#0e0f11">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -62,8 +62,9 @@ section{padding:88px 0}
 .plat{font:500 14px/1.5 'JetBrains Mono',monospace;color:var(--grey);margin:0}
 /* free */
 .free-wrap{display:grid;gap:24px}
-.free-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:var(--panel);border:1px solid var(--edge);border-radius:16px;overflow:hidden}
-.free-card img{width:100%;aspect-ratio:1;object-fit:cover}
+.free-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);background:var(--panel);border:1px solid var(--edge);border-radius:16px;overflow:hidden}
+.free-card .shot{background:var(--well);display:flex;align-items:center;padding:18px}
+.free-card img{width:100%;height:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 .fc-body{padding:36px}
 .fc-body h3{font-size:clamp(48px,6vw,80px);margin-top:16px}
 .dl{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
@@ -76,7 +77,8 @@ section{padding:88px 0}
 @media (max-width:640px){.grid{grid-template-columns:1fr}}
 .card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--edge);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s}
 .card:hover{border-color:var(--edge2);transform:translateY(-2px)}
-.card img{width:100%;aspect-ratio:1;object-fit:cover;border-bottom:1px solid var(--edge)}
+.card .shot{border-bottom:1px solid var(--edge);background:var(--well)}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left}
 .c-body{padding:22px;display:flex;flex-direction:column;flex:1}
 .c-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
 .c-body h3{font-size:30px;margin-bottom:8px}
@@ -88,6 +90,11 @@ section{padding:88px 0}
 .bundle h3{font-size:clamp(32px,4.5vw,52px);margin:8px 0 10px}
 .bundle h3 span{color:var(--amber)}
 .bundle p{margin:0;max-width:560px}
+.shot{position:relative;display:block;overflow:hidden}
+.shot .zoom{position:absolute;right:10px;bottom:10px;font:700 12px/1 'JetBrains Mono',monospace;background:rgba(14,15,17,.85);color:var(--amber);border:1px solid var(--edge2);border-radius:6px;padding:7px 9px;opacity:0;transition:opacity .2s}
+.shot:hover .zoom,.shot:focus-visible .zoom{opacity:1}
+.shot img{transition:transform .4s}
+.card .shot:hover img{transform:scale(1.03)}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
 .steps div{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:26px}
@@ -148,7 +155,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="shead"><div><span class="lbl">Free · no email needed</span><h2 class="disp">Start here.</h2></div>
   <p>A drum machine and the groove engine that drives it. Put GLAPP in front of BETONG and the beat starts to drag and breathe.</p></div>
   <div class="free-wrap"><article class="free-card rv" id="betong">
-  <img src="img/betong.webp" alt="BETONG: Polyrhythm techno drum machine" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/betong.webp" target="_blank" rel="noopener"><img src="shots/betong.webp" alt="BETONG plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="fc-body">
     <span class="chip cold">FREE · DRUM MACHINE</span>
     <h3 class="disp">BETONG</h3>
@@ -159,7 +166,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p class="plat">Mac + Windows · VST3 · AU · Standalone</p>
   </div>
 </article><article class="free-card rv" id="glapp">
-  <img src="img/glapp.webp" alt="GLAPP: Micro-timing groove engine" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/glapp.webp" target="_blank" rel="noopener"><img src="shots/glapp.webp" alt="GLAPP plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="fc-body">
     <span class="chip cold">FREE · MIDI GROOVE</span>
     <h3 class="disp">GLAPP</h3>
@@ -177,7 +184,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <p>Every machine is €20, or €10 with code <b style="color:var(--amber)">jim.paa</b>. Free updates for life.</p></div>
   <div class="bundle rv"><div><span class="lbl">The whole hall</span><h3 class="disp">All 13 machines. <span>€89.</span></h3><p>Every paid machine in one download, plus every future update. Saves €171 against full price.</p></div><a class="btn solid" data-buy="bundle" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Get the bundle</a></div>
   <h3 class="group lbl">Drums &amp; groove</h3><div class="grid"><article class="card rv" id="kolv">
-  <img src="img/kolv.webp" alt="KOLV: The techno conductor" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/kolv.webp" target="_blank" rel="noopener"><img src="shots/kolv-s.webp" alt="KOLV plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">TRACK BUILDER</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">KOLV</h3>
@@ -185,7 +192,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="kolv" href="https://payhip.com/b/514ux" target="_blank" rel="noopener">Buy KOLV</a></div>
   </div>
 </article><article class="card rv" id="smuts">
-  <img src="img/smuts.webp" alt="SMUTS: Order in, chaos out" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/smuts.webp" target="_blank" rel="noopener"><img src="shots/smuts-s.webp" alt="SMUTS plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">LOOP CHOPPER</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">SMUTS</h3>
@@ -193,7 +200,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="smuts" href="https://payhip.com/b/O4g8A" target="_blank" rel="noopener">Buy SMUTS</a></div>
   </div>
 </article><article class="card rv" id="span">
-  <img src="img/span.webp" alt="SPÅN: Minimal techno microsampler" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/span.webp" target="_blank" rel="noopener"><img src="shots/span-s.webp" alt="SPÅN plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">MICROSAMPLER</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">SPÅN</h3>
@@ -201,7 +208,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="span" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Buy SPÅN</a></div>
   </div>
 </article></div><h3 class="group lbl">Synths &amp; bass</h3><div class="grid"><article class="card rv" id="armering">
-  <img src="img/armering.webp" alt="ARMERING: Playful wavetable modulation machine" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/armering.webp" target="_blank" rel="noopener"><img src="shots/armering-s.webp" alt="ARMERING plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">SYNTH</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">ARMERING</h3>
@@ -209,7 +216,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="armering" href="https://payhip.com/b/mbVHX" target="_blank" rel="noopener">Buy ARMERING</a></div>
   </div>
 </article><article class="card rv" id="turbin">
-  <img src="img/turbin.webp" alt="TURBIN: Wavetable &amp; phase-mod power plant" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/turbin.webp" target="_blank" rel="noopener"><img src="shots/turbin-s.webp" alt="TURBIN plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">SYNTH</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">TURBIN</h3>
@@ -217,7 +224,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="turbin" href="https://payhip.com/b/bNnoC" target="_blank" rel="noopener">Buy TURBIN</a></div>
   </div>
 </article><article class="card rv" id="smidet">
-  <img src="img/smidet.webp" alt="SMIDET: The euclidean forge" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/smidet.webp" target="_blank" rel="noopener"><img src="shots/smidet-s.webp" alt="SMIDET plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">SYNTH</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">SMIDET</h3>
@@ -225,7 +232,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="smidet" href="https://payhip.com/b/J9sZj" target="_blank" rel="noopener">Buy SMIDET</a></div>
   </div>
 </article><article class="card rv" id="fasfel">
-  <img src="img/fasfel.webp" alt="FASFEL: Microtonal knock resonator" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/fasfel.webp" target="_blank" rel="noopener"><img src="shots/fasfel-s.webp" alt="FASFEL plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">SYNTH</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">FASFEL</h3>
@@ -233,7 +240,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="fasfel" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Buy FASFEL</a></div>
   </div>
 </article><article class="card rv" id="grund">
-  <img src="img/grund.webp" alt="GRUND: Sub &amp; micro-pluck bass" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/grund.webp" target="_blank" rel="noopener"><img src="shots/grund-s.webp" alt="GRUND plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">BASS SYNTH</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">GRUND</h3>
@@ -241,7 +248,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="grund" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Buy GRUND</a></div>
   </div>
 </article><article class="card rv" id="allanrop">
-  <img src="img/allanrop.webp" alt="ALLANROP: Type text, it shouts in time" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/allanrop.webp" target="_blank" rel="noopener"><img src="shots/allanrop-s.webp" alt="ALLANROP plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">VOICE</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">ALLANROP</h3>
@@ -249,7 +256,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="allanrop" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Buy ALLANROP</a></div>
   </div>
 </article></div><h3 class="group lbl">Effects</h3><div class="grid"><article class="card rv" id="fukt">
-  <img src="img/fukt.webp" alt="FUKT: Twin filter &amp; grit machine" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/fukt.webp" target="_blank" rel="noopener"><img src="shots/fukt-s.webp" alt="FUKT plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">EFFECT</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">FUKT</h3>
@@ -257,7 +264,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="fukt" href="https://payhip.com/b/DQHgr" target="_blank" rel="noopener">Buy FUKT</a></div>
   </div>
 </article><article class="card rv" id="fras">
-  <img src="img/fras.webp" alt="FRÄS: Geometric filter machine" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/fras.webp" target="_blank" rel="noopener"><img src="shots/fras-s.webp" alt="FRÄS plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">EFFECT</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">FRÄS</h3>
@@ -265,7 +272,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="fras" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Buy FRÄS</a></div>
   </div>
 </article><article class="card rv" id="ventil">
-  <img src="img/ventil.webp" alt="VENTIL: Groove, breath &amp; dub" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/ventil.webp" target="_blank" rel="noopener"><img src="shots/ventil-s.webp" alt="VENTIL plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">EFFECT</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">VENTIL</h3>
@@ -273,7 +280,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="ventil" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Buy VENTIL</a></div>
   </div>
 </article><article class="card rv" id="kulvert">
-  <img src="img/kulvert.webp" alt="KULVERT: Basement tunnel chamber" width="800" height="800" loading="lazy">
+  <a class="shot" href="shots/kulvert.webp" target="_blank" rel="noopener"><img src="shots/kulvert-s.webp" alt="KULVERT plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">EFFECT</span><span class="plat">Mac + Windows</span></div>
     <h3 class="disp">KULVERT</h3>
