@@ -139,13 +139,19 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 .hero .news{margin:18px 0 0;padding:10px 14px;border:1px solid var(--edge);border-left:3px solid var(--amber);border-radius:6px;font-size:.95rem;max-width:640px}
 .chip.new{border-color:var(--amber);color:var(--amber)}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.review{margin:0;background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:26px 26px 22px;display:grid;gap:18px;align-content:space-between}
+.review blockquote{margin:0;font-size:clamp(19px,2.2vw,23px);line-height:1.4;color:var(--white);text-wrap:pretty}
+.review blockquote::before{content:"\201C";display:block;font:900 54px/.6 Georgia,serif;color:var(--amber);margin-bottom:10px}
+.review figcaption{font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.review figcaption b{color:var(--amber);font-weight:700}
 </style>
 </head>
 <body>
 <a class="deal" href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Launch: €10 per machine with code <b>jim.paa</b> · all 13 for €89 (normally €150) ↗</a>
 <nav><div class="wrap">
   <a class="logo" href="#top">MASKIN<span>HALLEN</span></a>
-  <div class="links"><a href="#free">Free</a><a href="#videos">Videos</a><a href="#machines">Machines</a><a class="hide" href="#install">Install</a><a class="hide" href="#about">About</a><a href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Store ↗</a></div>
+  <div class="links"><a href="#free">Free</a><a href="#videos">Videos</a><a class="hide" href="#reviews">Reviews</a><a href="#machines">Machines</a><a class="hide" href="#install">Install</a><a class="hide" href="#about">About</a><a href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">Store ↗</a></div>
 </div></nav>
 
 <main id="top">
@@ -203,6 +209,17 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <video controls preload="metadata" playsinline poster="videos/tomrum-ventil-kulvert-span.webp" src="videos/tomrum-ventil-kulvert-span.mp4"></video>
       <div class="v-body"><h3>A synth and some effects</h3><div class="tags"><span class="chip">TOMRUM</span><a class="chip" href="#ventil">VENTIL</a><a class="chip" href="#kulvert">KULVERT</a><a class="chip" href="#span">SPÅN</a></div></div>
     </article>
+  </div>
+</div></section>
+
+<section id="reviews" style="border-top:1px solid var(--edge)"><div class="wrap">
+  <div class="shead"><div><span class="lbl">From the floor</span><h2 class="disp">They said.</h2></div><p>Real words from people who bought the machines. Sent to us through the store.</p></div>
+  <div class="reviews">
+    <!-- Nytt omdöme: kopiera en <figure> och byt text och namn. Bara förnamn + stjärnor. -->
+    <figure class="review rv">
+      <blockquote>All 15 programs are absolutely fantastic; it&rsquo;s been a long time since I&rsquo;ve bought something this good. Have a good time!</blockquote>
+      <figcaption><b>Nikola</b> ****</figcaption>
+    </figure>
   </div>
 </div></section>
 
