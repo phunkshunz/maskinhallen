@@ -42,6 +42,7 @@ nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
 .logo{font-weight:900;letter-spacing:.24em;color:var(--white);text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:12px}
 .logo .mk{width:34px;height:34px;flex:none}
 .logo .lw span{color:var(--amber)}
+@media (max-width:560px){.logo .lw{display:none}.logo .mk{width:38px;height:38px}nav .links{gap:16px}}
 
 nav .links{display:flex;gap:22px;margin-left:auto}
 nav .links a{text-decoration:none;color:var(--grey);font-weight:600;font-size:16px}
@@ -149,7 +150,7 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .rv{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-.hero .news{margin:18px 0 0;padding:10px 14px;border:1px solid var(--edge);border-left:3px solid var(--amber);border-radius:6px;font-size:.95rem;max-width:640px}
+.hero .news{margin:18px 0 24px;padding:10px 14px;border:1px solid var(--edge);border-left:3px solid var(--amber);border-radius:6px;font-size:.95rem;max-width:640px}
 .chip.new{border-color:var(--amber);color:var(--amber)}
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
 .review{margin:0;background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:26px 26px 22px;display:grid;gap:18px;align-content:space-between}
