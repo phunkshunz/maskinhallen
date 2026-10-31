@@ -137,6 +137,8 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .rv{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.hero .news{margin:18px 0 0;padding:10px 14px;border:1px solid var(--edge);border-left:3px solid var(--amber);border-radius:6px;font-size:.95rem;max-width:640px}
+.chip.new{border-color:var(--amber);color:var(--amber)}
 </style>
 </head>
 <body>
@@ -151,12 +153,13 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <span class="lbl">Phunkshunz AUDIO · Stockholm</span>
   <h1 class="disp">Maskin<span>hallen</span></h1>
   <p class="lead">15 techno machines built for skewed, dragging, hypnotic grooves that always land on the one. Two of them are free. Start there.</p>
+  <p class="news"><b>New update</b> · Every machine now speaks English: one click on <b>SV | EN</b> in the logo. Free for everyone who already owns them.</p>
   <div class="cta"><a class="btn solid" href="#free">Get BETONG + GLAPP free</a><a class="btn" href="#machines">See all machines</a></div>
   <div class="facts">
     <div><b>15</b><span>machines</span></div>
     <div><b>2 free</b><span>BETONG + GLAPP</span></div>
     <div><b>€89</b><span>all 13 machines</span></div>
-    <div><b>Mac + Win</b><span>VST3 · AU</span></div>
+    <div><b>Mac · Win · Linux</b><span>VST3 · AU · LV2</span></div>
   </div>
 </div></header>
 
@@ -210,9 +213,9 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <h3 class="group lbl">Drums &amp; groove</h3><div class="grid"><article class="card rv" id="kolv">
   <a class="shot" href="shots/kolv.webp" target="_blank" rel="noopener"><img src="shots/kolv-s.webp" alt="KOLV plugin interface" loading="lazy"><span class="zoom">View full size ↗</span></a>
   <div class="c-body">
-    <div class="c-top"><span class="chip">TRACK BUILDER</span><span class="plat">Mac + Windows + Linux</span></div>
+    <div class="c-top"><span class="chip">TRACK BUILDER</span><span class="chip new">REBUILT</span><span class="plat">Mac + Windows + Linux</span></div>
     <h3 class="disp">KOLV</h3>
-    <p>Builds a whole techno track while it plays. The beat stumbles, mutates and grows. Hours without repeating.</p>
+    <p>Rebuilt from scratch. A techno conductor that builds the whole track while it plays: the beat stumbles, mutates and grows for hours without repeating. Load BETONG or any VST3/AU into its rack and it plays them for you.</p>
     <div class="buy"><span class="price"><s>€20</s> €10</span><a class="btn solid" data-buy="kolv" href="https://payhip.com/b/byKko" target="_blank" rel="noopener">Buy KOLV</a></div>
   </div>
 </article><article class="card rv" id="smuts">
@@ -341,10 +344,11 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <details><summary>What do I need?</summary><p>A Mac with macOS 11 or later (Intel or Apple Silicon), 64-bit Windows 10/11, or 64-bit Linux (x86_64). Any host that loads VST3, AU or LV2.</p></details>
     <details><summary>Are the free ones really free?</summary><p>Yes. BETONG and GLAPP are full versions. No email, no time limit, no noise.</p></details>
     <details><summary>Do they run on Windows?</summary><p>Yes. Every machine comes for Mac and 64-bit Windows 10/11. If Windows says "Windows protected your PC", click More info → Run anyway.</p></details>
+    <details><summary>Is the interface in English?</summary><p>Yes. The machines have Swedish names on the panel, but one click on <b>SV | EN</b> in the logo switches every label, menu and tooltip to English. Your choice is remembered across all machines. Preset names stay Swedish on purpose.</p></details>
     <details><summary>Do they run on Linux?</summary><p>Yes. Every machine comes as VST3 and LV2 for 64-bit Linux (x86_64). The installer puts them in <code>~/.vst3</code> and <code>~/.lv2</code>. Works in Bitwig, Reaper, Ardour and other Linux hosts.</p></details>
   </div><div>
     <details><summary>How do I pay?</summary><p>Card or PayPal through Payhip, in euro. VAT is handled automatically. You get the download link straight away. The code jim.paa gives 50% off single machines. The bundle is already at its launch price, no code needed.</p></details>
-    <details><summary>Do I get updates?</summary><p>Yes. New versions of what you bought are free.</p></details>
+    <details><summary>Do I get updates?</summary><p>Yes. New versions of what you bought are free. Download again from your Payhip receipt or the email Payhip sent you.</p></details>
     <details><summary>Do they work together?</summary><p>They are built as one system. GLAPP drives BETONG, GRUND sits under it, FASFEL knocks above it, KULVERT puts it all in a basement, and KOLV conducts the lot.</p></details>
   </div></div>
 </div></section>
