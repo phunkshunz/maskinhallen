@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOLV Manual · MASKINHALLEN</title>
+<meta name="description" content="The complete manual for KOLV, the techno conductor that builds the track while it plays. Quick start, every control, the arc, styles, lanes, the rack and tips.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<meta name="theme-color" content="#0e0f11">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f11;--panel:#17181b;--card:#1c1e22;--well:#0b0c0d;--edge:#2a2d32;--edge2:#3a3e45;--amber:#ffb23f;--cold:#9fd3e6;--white:#f2f4f6;--text:#d5d9dd;--grey:#8a9097;--dim:#5e636a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Inter,system-ui,sans-serif}
+a{color:var(--amber)}
+img{display:block;max-width:100%;height:auto}
+.top{position:sticky;top:0;z-index:5;background:rgba(14,15,17,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--edge)}
+.top .in{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+.top a{color:var(--text);text-decoration:none;font-weight:700}
+.top .home{font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em}
+.top .home b{color:var(--amber)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px;border:1.5px solid var(--amber);color:var(--amber)!important;font-weight:800;text-decoration:none}
+.btn.solid{background:var(--amber);color:var(--bg)!important}
+.layout{max-width:1240px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px}
+nav.toc{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;padding:28px 0}
+nav.toc a{display:block;color:var(--grey);text-decoration:none;font-size:14px;padding:5px 0 5px 12px;border-left:2px solid var(--edge)}
+nav.toc a:hover{color:var(--white);border-left-color:var(--amber)}
+main{min-width:0;padding:28px 0 80px}
+.hero{padding:30px 0 10px}
+.lbl{font:700 13px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+h1{font-size:clamp(56px,9vw,110px);font-weight:900;letter-spacing:-.03em;line-height:.9;color:var(--amber);margin:10px 0 6px}
+h1 span{color:var(--white);font-size:.42em;letter-spacing:-.01em;display:block;margin-top:10px}
+h2{font-size:clamp(30px,4vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.05;color:var(--white);margin:72px 0 6px;scroll-margin-top:80px}
+h2 small{display:block;font:700 13px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;color:var(--amber);margin-bottom:8px}
+h3{font-size:21px;color:var(--white);margin:34px 0 6px}
+p,li{max-width:72ch}
+.lead{font-size:20px;color:var(--white)}
+.shot{background:var(--well);border:1px solid var(--edge);border-radius:14px;padding:14px;margin:26px 0}
+.shot img{border-radius:8px}
+.shot figcaption{font-size:14px;color:var(--grey);margin-top:10px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:20px 0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:16px 18px 16px 64px;position:relative;max-width:none}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--amber);color:var(--bg);font-weight:900;display:grid;place-items:center}
+.k{font:700 .82em/1.5 'JetBrains Mono',monospace;background:var(--card);border:1px solid var(--edge2);color:var(--white);padding:1px 7px;border-radius:5px;overflow-wrap:anywhere}
+.sv{color:var(--dim);font-size:.85em}
+.tbl{overflow-x:auto;margin:18px 0;border:1px solid var(--edge);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--edge);vertical-align:top}
+th{background:var(--panel);color:var(--grey);font:700 12px/1.3 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td:first-child{white-space:nowrap}
+.note{background:var(--panel);border:1px solid var(--edge);border-left:4px solid var(--amber);border-radius:10px;padding:14px 18px;margin:20px 0}
+.note.cold{border-left-color:var(--cold)}
+.note b{color:var(--white)}
+.arc{display:flex;gap:4px;margin:20px 0 6px;font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.08em}
+.arc div{padding:12px 8px;border-radius:6px;color:var(--white);min-width:0;overflow:hidden;text-overflow:clip}
+@media (max-width:600px){.arc{font-size:9px;letter-spacing:0}.arc div{padding:10px 4px}}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin:18px 0}
+.card{background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:16px 18px}
+.card h4{margin:0 0 6px;color:var(--amber);font-size:16px}
+.card p{margin:0;font-size:15.5px}
+pre{background:var(--well);border:1px solid var(--edge);border-radius:10px;padding:14px 16px;overflow-x:auto;font:500 14px/1.5 'JetBrains Mono',monospace;color:var(--white)}
+footer{border-top:1px solid var(--edge);margin-top:80px;padding:30px 0;color:var(--grey);font-size:14px}
+@media (max-width:900px){.layout{grid-template-columns:1fr;gap:0}nav.toc{display:none}}
+@media print{
+  :root{--bg:#fff;--panel:#f5f5f5;--card:#eee;--well:#f5f5f5;--edge:#ccc;--edge2:#bbb;--white:#000;--text:#222;--grey:#555;--dim:#777;--amber:#b86e00}
+  .top,nav.toc,.noprint{display:none}.layout{display:block}h2{page-break-after:avoid}.steps li,.card,tr{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="in">
+  <a class="home" href="index.html">← <b>MASKINHALLEN</b> · PHUNKSHUNZ AUDIO</a>
+  <span class="noprint" style="display:flex;gap:10px"><a class="btn" href="index.html#kolv-demo">Free demo</a><a class="btn solid" href="https://payhip.com/b/byKko" target="_blank" rel="noopener">Buy KOLV</a></span>
+</div></header>
+
+<div class="layout">
+<nav class="toc" aria-label="Contents">
+  <a href="#quick">Quick start</a>
+  <a href="#install">Install</a>
+  <a href="#tour">The screen</a>
+  <a href="#arc">The arc &amp; energy</a>
+  <a href="#conductor">Conductor tab</a>
+  <a href="#ideas">Ideas: NEW IDEA, SIMILAR, SPARK</a>
+  <a href="#sounds">Sounds &amp; kits</a>
+  <a href="#styles">The 16 styles</a>
+  <a href="#lanes">Lanes tab</a>
+  <a href="#mess">Mess tab</a>
+  <a href="#rack">The rack: your own VSTs</a>
+  <a href="#endless">ENDLESS mode</a>
+  <a href="#learn">LEARN MIDI</a>
+  <a href="#like">LIKE, UNDO, EXPORT</a>
+  <a href="#midi">MIDI out &amp; in</a>
+  <a href="#rules">The rules KOLV plays by</a>
+  <a href="#recipes">Recipes</a>
+  <a href="#demo">Demo vs full version</a>
+  <a href="#faq">Troubleshooting</a>
+</nav>
+
+<main>
+<section class="hero">
+  <span class="lbl">Manual · MASKINHALLEN · v1.1</span>
+  <h1>KOLV<span>The techno conductor that builds the track while it plays.</span></h1>
+  <p class="lead">KOLV doesn't play a loop. It writes a whole techno track in real time: kick, hats, clicks, percussion, bass and stabs, shaped into an arc with an intro, groove, tension, drop and release. The beat stumbles, mutates and grows for hours without repeating, and it always lands on the one.</p>
+  <p>All 235 sounds and 44 kits from BETONG are built in, so KOLV sounds right the moment you press play. Every label in KOLV can be shown in Swedish or English with the <span class="k">SV | EN</span> button. This manual uses the English names, with the Swedish one in grey where it helps.</p>
+  <figure class="shot"><a href="shots/kolv-manual.webp" target="_blank" rel="noopener"><img src="shots/kolv-manual.webp" alt="The KOLV interface: header with ideas, arc bar, six tracks with step grids, and the conductor controls" loading="lazy"></a><figcaption>KOLV in full. Header at the top, the arc under it, six tracks in the middle, and the three tabs at the bottom.</figcaption></figure>
+</section>
+
+<h2 id="quick"><small>01</small>Quick start: music in 60 seconds</h2>
+<ol class="steps">
+  <li><b>Load KOLV on an instrument track</b> in your DAW (it's an instrument, not an effect). Or open the standalone app.</li>
+  <li><b>Press play in your DAW.</b> KOLV follows your tempo and position to the sample. In the standalone app, press <span class="k">PLAY</span> and set <span class="k">TEMPO</span>.</li>
+  <li><b>Press <span class="k">NEW IDEA</span></b> until something grabs you. Each press gives a new seed, style, kit and key.</li>
+  <li><b>Like the style but not the pattern?</b> Press <span class="k">SIMILAR</span>. Went too far? <span class="k">◀</span> goes back, <span class="k">▶</span> forward. KOLV remembers your last 64 ideas.</li>
+  <li><b>Ride it live:</b> turn <span class="k">CHAOS</span> for more mutation, switch off <span class="k">AUTO</span> and ride <span class="k">ENERGY</span> yourself, and hit <span class="k">SPARK</span> for a surprise.</li>
+</ol>
+<div class="note"><b>Only the kick and stab are playing?</b> That's the intro. KOLV brings tracks in as the energy rises, just like a DJ would. Wait a few bars, or switch off ENERGY <span class="k">AUTO</span> and turn ENERGY above 60 %. See <a href="#arc">The arc &amp; energy</a>.</div>
+
+<h2 id="install"><small>02</small>Install</h2>
+<p>Unzip the file you downloaded. Don't use GitHub's green "Code" button, that's only the source code.</p>
+<div class="grid2">
+  <div class="card"><h4>Mac</h4><p>Pick the zip for your Mac: <b>M1–M4</b> (Apple Silicon) or <b>Intel</b>. Unzip, open Terminal and run:</p><pre>bash ~/Downloads/KOLV/installera.command</pre><p>For the demo: <span class="k">bash ~/Downloads/KOLV-DEMO/installera.command</span>. It copies the VST3 and AU and removes macOS's block on unsigned plugins. macOS 11 Big Sur or newer.</p></div>
+  <div class="card"><h4>Windows</h4><p>Right-click the zip and choose <b>Extract all</b>. Double-click <span class="k">installera.bat</span> and say yes to the admin prompt. KOLV.vst3 lands in <span class="k">C:\Program Files\Common Files\VST3</span>. The .exe is the standalone app.</p></div>
+  <div class="card"><h4>Linux</h4><p>Unzip and run:</p><pre>bash KOLV/installera-linux.sh</pre><p>VST3 goes to <span class="k">~/.vst3</span>, LV2 to <span class="k">~/.lv2</span>.</p></div>
+</div>
+<p>Then restart your DAW or rescan plugins (in Bitwig: Settings › Locations › Plug-ins › Rescan) and search for <b>KOLV</b>. The demo installs as <b>KOLV-DEMO</b> and can sit next to the full version.</p>
+
+<h2 id="tour"><small>03</small>The screen</h2>
+<div class="grid2">
+  <div class="card"><h4>Header</h4><p>The KOLV logo (click it for the story of the Docklands boatyard), the current style and kit, the idea buttons, the phase you're in (INTRO, GROOVE ...), bar number, key, the energy meter and CPU.</p></div>
+  <div class="card"><h4>The arc</h4><p>The bar under the header shows the whole track: every section, how long it is and where you are. DENSITY at the right shows how many hits the current phrase is allowed.</p></div>
+  <div class="card"><h4>Six tracks</h4><p>KICK, HAT, CLICK, PERC, BAS, STAB. Each has <span class="k">LOCK</span>, a step grid (bright = playing now, dim = resting), <span class="k">ECHO</span> send, <span class="k">LVL</span>, the sound button, a dice, <span class="k">FX</span>, <span class="k">SHOW</span> and <span class="k">M1–M4</span>.</p></div>
+  <div class="card"><h4>Three tabs</h4><p><span class="k">CONDUCTOR</span> runs the track. <span class="k">LANES</span> holds eight euclidean modulators. <span class="k">MESS</span> <span class="sv">(STÖK)</span> has crush, skew and the dub echo.</p></div>
+</div>
+<p>A small number next to a track name, like <span class="k">7/16</span>, means that track is running a different length from the others. That's polyrhythm, and it's on purpose.</p>
+
+<h2 id="arc"><small>04</small>The arc &amp; energy</h2>
+<p>KOLV arranges like a DJ plays. Every track is an <b>arc</b> built from five kinds of sections:</p>
+<div class="arc" role="img" aria-label="Arc: intro, groove, tension, drop, groove, release">
+  <div style="background:#3a3d42;flex:2">INTRO</div><div style="background:#2a6a78;flex:3">GROOVE</div><div style="background:#8a4f22;flex:1.5">SPÄNNING</div><div style="background:#22252a;flex:.6;color:#8a9097">DROPP</div><div style="background:#2a6a78;flex:3">GROOVE</div><div style="background:#4a4d52;flex:2">SLÄPP</div>
+</div>
+<div class="tbl"><table>
+<tr><th>Section</th><th>Energy</th><th>What happens</th></tr>
+<tr><td><b>INTRO</b></td><td>15 → 50 %</td><td>Starts with kick and stab, the rest come in one by one. Only in the first arc.</td></tr>
+<tr><td><b>GROOVE</b></td><td>about 60 %</td><td>Everything plays, the energy breathes gently. The main body of the track.</td></tr>
+<tr><td><b>SPÄNNING</b> <span class="sv">tension</span></td><td>60 → 98 %</td><td>Builds hard. Percussion always joins, filters open.</td></tr>
+<tr><td><b>DROPP</b> <span class="sv">drop</span></td><td>34 %</td><td>4 or 8 bars without kick and bass. Then GROOVE slams back.</td></tr>
+<tr><td><b>SLÄPP</b> <span class="sv">release</span></td><td>60 → 20 %</td><td>The track winds down.</td></tr>
+</table></div>
+<p>Each track joins when the energy passes its threshold:</p>
+<div class="tbl"><table>
+<tr><th>Track</th><th>Plays from energy</th></tr>
+<tr><td>STAB</td><td>always</td></tr>
+<tr><td>KICK</td><td>12 % (silent in DROPP)</td></tr>
+<tr><td>CLICK</td><td>20 %</td></tr>
+<tr><td>HAT</td><td>28 %</td></tr>
+<tr><td>BAS</td><td>36 % (silent in DROPP)</td></tr>
+<tr><td>PERC</td><td>55 %, or always in SPÄNNING</td></tr>
+</table></div>
+<p><b>ENERGY AUTO on:</b> the arc drives the energy. <b>AUTO off:</b> the ENERGY knob drives it, live. That's the most powerful performance control in KOLV: pull it down to strip the track back to kick and stab, push it up to bring everything in.</p>
+
+<h2 id="conductor"><small>05</small>Conductor tab: every control</h2>
+<div class="tbl"><table>
+<tr><th>Control</th><th>What it does</th></tr>
+<tr><td><span class="k">SEED</span> + dice</td><td>The track's DNA. Same seed and style always gives the same track, at the same bar. The dice gives a new seed.</td></tr>
+<tr><td><span class="k">CHAOS</span> <span class="sv">KAOS</span></td><td>How many and how big the mutations are per phrase, and how fast the timbre wanders. 20–40 % is hypnotic, 70 %+ is restless.</td></tr>
+<tr><td><span class="k">ENERGY</span> + <span class="k">AUTO</span></td><td>See <a href="#arc">the arc</a>. AUTO on: the arc decides. Off: you decide.</td></tr>
+<tr><td><span class="k">GROOVE</span> <span class="sv">SVÄNG</span></td><td>Swing on the odd 16ths. Never on the kick.</td></tr>
+<tr><td><span class="k">PUMP</span></td><td>Built-in sidechain: the kick pushes everything else down.</td></tr>
+<tr><td><span class="k">VOLUME</span></td><td>Master level with soft saturation.</td></tr>
+<tr><td><span class="k">STYLE</span></td><td>The rhythm grammar the conductor follows. AUTO lets the seed choose. See <a href="#styles">the 16 styles</a>.</td></tr>
+<tr><td><span class="k">KIT</span> + dice</td><td>Which BETONG kit plays. AUTO picks one that fits the style and changes it when the style drifts.</td></tr>
+<tr><td><span class="k">PHRASE</span></td><td>Bars between mutations: 4, 8, 16 or 32. One change per phrase is what makes it hypnotic.</td></tr>
+<tr><td><span class="k">LENGTH</span></td><td>Bars per arc: 64, 128, 192, 256 or 512.</td></tr>
+<tr><td><span class="k">ROT</span></td><td>Root key. Or play a key into KOLV from your MIDI keyboard and everything moves there.</td></tr>
+<tr><td><span class="k">CHANNELS</span></td><td>For MIDI OUT. See <a href="#midi">MIDI</a>.</td></tr>
+<tr><td><span class="k">ENDLESS</span>, <span class="k">STYLE DRIFT</span>, <span class="k">KEY DRIFT</span></td><td>See <a href="#endless">ENDLESS mode</a>.</td></tr>
+<tr><td><span class="k">LOCK</span> per track</td><td>Freezes that track: no mutations, no timbre drift. Lock the kick and bass you love, let the rest evolve.</td></tr>
+<tr><td><span class="k">LVL</span> / <span class="k">ECHO</span> per track</td><td>Level (drag to zero to mute) and how much goes to the dub echo.</td></tr>
+</table></div>
+
+<h2 id="ideas"><small>06</small>Ideas: NEW IDEA, SIMILAR, SPARK</h2>
+<div class="grid2">
+  <div class="card"><h4>NEW IDEA <span class="sv">NY IDÉ</span></h4><p>A whole new track: new seed, style AUTO, kit AUTO, a new key, new lanes and sometimes a touch of skew or crush.</p></div>
+  <div class="card"><h4>SIMILAR <span class="sv">LIKNANDE</span></h4><p>Keeps the style and kit that are playing, gives a new pattern. Perfect when the sound is right but the groove isn't.</p></div>
+  <div class="card"><h4>SPARK <span class="sv">GNISTA</span></h4><p>One unexpected change while the track keeps going: a new sound on a track, a new lane, echo, a new kit, chaos, skew/crush or swing. The status line tells you what happened.</p></div>
+  <div class="card"><h4>◀ ▶</h4><p>Step back and forward through your last 64 ideas. Your knob tweaks are saved with each idea when you leave it.</p></div>
+</div>
+
+<h2 id="sounds"><small>07</small>Sounds &amp; kits</h2>
+<p>Each track plays a sound from the current BETONG kit: the kick, closed hat (open on accents), rim, two percs, and bass and stab tuned to the key. The stab has its own dub delay.</p>
+<p>Click the <b>sound button</b> on a track (for example <span class="k">HARDGROOVE 909 ▾</span>) to choose:</p>
+<ul>
+  <li><b>From the kit</b>: follow the kit (default).</li>
+  <li><b>KOLV's synth</b>: KOLV's own synth engines.</li>
+  <li><b>The old KOLV synth</b>: the original monophonic acid voice with ladder filter, accent and 303 slide. Ten recipes, from HYPNOS and ACID to DUB &amp; EKO and HARDGROOVE. Best on BAS and STAB.</li>
+  <li><b>Every sound in the library</b>, sorted into Kicks, Hats and cymbals, Clap and snare, Perc, Bass, Stabs and chords, Textures, Leads, Voices, FX and Forge.</li>
+  <li><b>Favourites</b>, <b>MASKINHALLEN</b> and <b>Load VST3/AU...</b>: see <a href="#rack">the rack</a>.</li>
+</ul>
+<p>The <b>dice</b> next to the sound button gives a new sound of the same kind. The conductor's macros shape every sound: M1 is openness (how long it rings, follows the energy), M2 timbre, M3 drum pitch, M4 drive.</p>
+
+<h2 id="styles"><small>08</small>The 16 styles</h2>
+<p>A style is a rhythm grammar: a base pattern per track, which steps are allowed to fill in, polymeter lengths, swing, how late things may stumble, which tracks change most and which bass notes are allowed. The pattern drifts away from the base and is pulled back the further it goes. Things disappear and return. It's hypnosis, not drift.</p>
+<div class="tbl"><table>
+<tr><th>Style</th><th>Built on</th><th>Character</th></tr>
+<tr><td>LESS IS MORE</td><td>the <i>less is more</i> reel</td><td>Air around every click, one stab per bar</td></tr>
+<tr><td>HYPNOS</td><td>Plastikman, <i>Consumed</i></td><td>Rimshot cycles of 5 and 12, light 909 shuffle, tracks cut out for a phrase and return</td></tr>
+<tr><td>SPASTIK</td><td>percussive Hawtin</td><td>909 hats on every 16th with every fourth late, dense snare</td></tr>
+<tr><td>MINIMAL NATION</td><td>Robert Hood</td><td>Only drums, bass and funk; ticking hats</td></tr>
+<tr><td>PURPOSE MAKER</td><td>the Jeff Mills loop</td><td>Offbeat open hat and ride, rolling 3-step toms, no swing</td></tr>
+<tr><td>BASIC CHANNEL</td><td>dub techno</td><td>No swing, clap on 2 and 4, syncopated stab in dotted-eighth delay</td></tr>
+<tr><td>PERLON SKEV</td><td>the Villalobos direction</td><td>Percussion plays melody with the bass, heavy shuffle, irregular</td></tr>
+<tr><td>FASFÖRSKJUTNING</td><td>Reich phasing (Voigt, Surgeon)</td><td>Loops of 15, 12 and 7 steps sliding apart</td></tr>
+<tr><td>SVENSK LOOP</td><td>Stockholm 90s</td><td>Tight looped hats, 3-step perc, rolling octave bass</td></tr>
+<tr><td>INDUSTRI</td><td>Birken, Mord, Surgeon</td><td>Hammering offbeat bass, dense metal clicks, distorted kick</td></tr>
+<tr><td>LOSING CONTROL</td><td>Daniel Bell (DBX)</td><td>As sparse as it gets: kick, a few ticks and a bouncing sub</td></tr>
+<tr><td>GAS</td><td>Wolfgang Voigt</td><td>Steady kick under dub swells, almost nothing else</td></tr>
+<tr><td>BERGHAIN DUB</td><td>the Dettmann/Klock era</td><td>Soft kick, rolling swing, dub chords, hats that build</td></tr>
+<tr><td>BIRMINGHAM</td><td>Regis / Downwards</td><td>Loop-driven industrial, hard offbeats, rolling toms</td></tr>
+<tr><td>SKIVSPELARE</td><td>Brinkmann's idea</td><td>The same pattern under two "tone arms" drifting out of phase</td></tr>
+<tr><td>ACID MINIMAL</td><td>Plastikman/Hood acid</td><td>Rolling bassline with octave jumps, high resonance</td></tr>
+</table></div>
+<p>Plus <b>LEARNED (MIDI)</b>: your own style, made by <a href="#learn">LEARN MIDI</a>. No patterns are copied from any track; the styles are built from the well-known traits of each sound.</p>
+
+<h2 id="lanes"><small>09</small>Lanes tab <span class="sv">BANOR</span></h2>
+<p>Eight euclidean lanes that pull on the sound in their own rhythm, completely independent of the pattern. Different rates against each other give real polyrhythm, and this is where KOLV gets its "alive" feel.</p>
+<div class="tbl"><table>
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><span class="k">TARGET</span></td><td><b>Filter</b> (plus closes, minus opens a high-pass) · <b>Ton</b> (pitch jumps, zaps) · <b>Eko-kast</b> (throws the hit into the dub echo) · <b>Kross</b> · <b>Hacka</b> (chop) · <b>Stutter</b> (2–4 fast repeats of the track's last hit) · <b>M1–M4</b> (the track's macros, or knobs in a loaded VST) · <b>Rotera nästa</b> (each hit rotates the next lane's rhythm one step, so the lanes push each other) · <b>Av</b> (off)</td></tr>
+<tr><td><span class="k">TRACK</span></td><td>Which track it works on, or ALL.</td></tr>
+<tr><td><span class="k">BAR</span> <span class="sv">TAKT</span></td><td>The lane's own rate: 1/32, 1/16, 1/8, 1/4, 1/16T, 1/8T, 3/16, 5/16 or quintuplets.</td></tr>
+<tr><td><span class="k">STEPS</span> / <span class="k">HITS</span> / <span class="k">ROT</span></td><td>The euclidean rhythm, like 5 hits spread over 16 steps, rotated.</td></tr>
+<tr><td><span class="k">DEPTH</span> / <span class="k">DECAY</span></td><td>How hard it pulls (minus flips it) and how long each pulse rings.</td></tr>
+</table></div>
+<p>Each lane has its own dice. <span class="k">RANDOMIZE LANES</span> builds a fresh set with 3–5 lanes running, following a recipe so it sounds like techno and not noise. Stutter and pitch jumps are also sent as MIDI.</p>
+
+<h2 id="mess"><small>10</small>Mess tab <span class="sv">STÖK</span></h2>
+<div class="grid2">
+  <div class="card"><h4>CRUSH <span class="sv">KROSS</span></h4><p>Lo-fi bits and sample rate on everything except the kick.</p></div>
+  <div class="card"><h4>SKEW <span class="sv">SKEV</span></h4><p>Tape wobble, wow and flutter, on everything except the kick.</p></div>
+  <div class="card"><h4>DUB ECHO</h4><p>Tempo-synced ping-pong with TIME (1/16 to 5/16), FEEDBACK, TONE and LEVEL. Feed it with each track's ECHO knob, or throw single hits in with an Eko-kast lane.</p></div>
+</div>
+
+<h2 id="rack"><small>11</small>The rack: play your own VSTs</h2>
+<p>Every track can play any VST3 or AU instead of a sample. Click the sound button › <b>Load VST3/AU...</b> and pick, say, BETONG for drums, ARMERING for bass and TURBIN for the stab. KOLV plays the plugin, and the pump and levels still apply. Pick a sound in the same menu to go back.</p>
+<ul>
+  <li><span class="k">SHOW</span> opens the plugin's window.</li>
+  <li><span class="k">M1–M4</span>: click, then turn a knob in the plugin. The conductor takes it over. M1 follows the energy (opens in tension, closes in the drop), M2–M4 wander slowly on prime-number cycles. KOLV also auto-links knobs with promising names (cutoff, resonance, decay, mix) when you load a plugin.</li>
+  <li><span class="k">FX ▾</span> puts an effect after the track's sound, like FUKT on the bass, KULVERT on the perc or FRÄS on the hats. Works on samples and loaded plugins.</li>
+  <li><b>MASKINHALLEN</b> in the menus loads any installed sibling with one click. <b>Favourites</b> remembers your last twelve.</li>
+  <li><b>Nudge</b> (a little) or <b>randomize</b> (wildly) a plugin's knobs from the menu or the track's dice. Volume, mix and bypass are left alone, and there's an undo.</li>
+  <li>Plugins, their settings and links are saved with your project. Watch <b>CPU</b> top right: on an older Mac two or three heavy plugins is usually the limit.</li>
+</ul>
+<div class="note cold"><b>Heads up:</b> if a loaded plugin crashes, it takes KOLV (and maybe your DAW) with it. The safe alternative is MIDI OUT with CHANNELS set to ONE PER TRACK and the plugins on their own DAW tracks.</div>
+
+<h2 id="endless"><small>12</small>ENDLESS mode: hours without repeating</h2>
+<p>With <span class="k">ENDLESS</span> <span class="sv">EVIGHET</span> on, the track never loops. When an arc ends, a new one is born from the seed and the arc number. Off: the arc loops from its first GROOVE.</p>
+<ul>
+  <li><span class="k">STYLE DRIFT</span> (with STYLE on AUTO): the style crossfades into a neighbour, one track per phrase like a DJ mix. Kick first, bass last.</li>
+  <li><span class="k">KEY DRIFT</span>: the key moves a fourth or fifth between arcs.</li>
+  <li><b>Prime cycles</b> of 7–73 bars turn timbre and swing. Together they repeat only after tens of thousands of bars.</li>
+  <li><b>Density budget:</b> each phrase has a cap on hits. If one track takes space, another must leave.</li>
+  <li><b>Anti-repetition:</b> if the exact same phrase was heard recently, it's forced onward.</li>
+</ul>
+<p>Tested: two hours gives 94–96 % unique phrases and not a single repeated 32-bar block.</p>
+
+<h2 id="learn"><small>13</small>LEARN MIDI <span class="sv">LÄR</span></h2>
+<p>Press <span class="k">LEARN MIDI...</span> and pick one or more MIDI files: your own beats or bought MIDI packs. KOLV works out how often each step plays per track, which steps are ever used, swing, micro-timing, how much each track varies and which bass notes are used. The result is the style <b>LEARNED</b>, which the conductor then mutates and develops forever.</p>
+<p>Drums are recognised on channel 10 or by General MIDI drum notes. Notes below E3 become bass, above become chords. The learned style is saved with your project.</p>
+
+<h2 id="like"><small>14</small>LIKE, UNDO and EXPORT</h2>
+<ul>
+  <li><span class="k">LIKE</span> <span class="sv">GILLA</span> pins what's playing right now. From the next bar, everything orbits around that pattern. Pins are saved with the project.</li>
+  <li><span class="k">UNDO</span> removes the latest pin.</li>
+  <li><b>Rewind</b> your DAW: KOLV calculates exactly the same bar at the same place. Bar 40 always sounds the same for the same seed.</li>
+  <li><span class="k">EXPORT MIDI...</span> saves 64–2048 bars as a MIDI file, one track per instrument, with tempo. Drag it into your DAW and finish the track by hand.</li>
+</ul>
+
+<h2 id="midi"><small>15</small>MIDI out &amp; in</h2>
+<p><span class="k">MIDI OUT</span> sends KOLV's notes onward so you can drive any instrument in your DAW. <span class="k">CHANNELS</span>:</p>
+<ul>
+  <li><b>GM (drums 10)</b>: drums on channel 10, bass on 1, stab on 2.</li>
+  <li><b>ONE PER TRACK</b>: KICK 1, HAT 2, CLICK 3, PERC 4, BAS 5, STAB 6.</li>
+</ul>
+<p>Routing the MIDI to other tracks is done in your DAW. <b>MIDI in:</b> play a key into KOLV and the whole track moves to that root (latched until you change ROT).</p>
+
+<h2 id="rules"><small>16</small>The rules KOLV plays by</h2>
+<div class="grid2">
+  <div class="card"><h4>The kick is the law</h4><p>It's never mutated. It only goes quiet in the drop.</p></div>
+  <div class="card"><h4>One change per phrase</h4><p>That's what makes it hypnotic instead of random.</p></div>
+  <div class="card"><h4>Timbre often, notes rarely</h4><p>Timbre wanders every bar. The bass changes note at most every fourth phrase, and only within the minor scale.</p></div>
+  <div class="card"><h4>The bass never lands on the kick</h4><p>So the low end stays clean.</p></div>
+  <div class="card"><h4>Polyrhythm</h4><p>PERC can be 3, 5, 7, 9, 11 or 13 steps, CLICK 7, 10, 12 or 16, HAT 15 or 16.</p></div>
+  <div class="card"><h4>Everything drags, nothing rushes</h4><p>Micro-timing is always late, so it still lands on the one.</p></div>
+</div>
+
+<h2 id="recipes"><small>17</small>Recipes</h2>
+<div class="grid2">
+  <div class="card"><h4>All-night DJ tool</h4><p>ENDLESS + STYLE DRIFT + KEY DRIFT on, STYLE AUTO, LENGTH 256, CHAOS 30 %. Press play and leave it.</p></div>
+  <div class="card"><h4>Live performance</h4><p>ENERGY AUTO off. Ride ENERGY for build-ups and breakdowns, LOCK the kick and bass, hit SPARK on the drop.</p></div>
+  <div class="card"><h4>Deep dub</h4><p>STYLE BASIC CHANNEL or GAS, ECHO 30–50 % on STAB and PERC, an Eko-kast lane on CLICK at 3/16, SKEW 20 %.</p></div>
+  <div class="card"><h4>Hard &amp; industrial</h4><p>STYLE INDUSTRI or BIRMINGHAM, PUMP 70 %, CRUSH 25 %, FUKT in the FX slot on BAS.</p></div>
+  <div class="card"><h4>Write a track, then finish it</h4><p>Find an idea, press LIKE on the best moment, EXPORT MIDI 256 bars and arrange it in your DAW.</p></div>
+  <div class="card"><h4>KOLV as the brain</h4><p>Load BETONG on KICK–PERC and ARMERING on BAS through the rack, link M1–M4 to their filters, and let the conductor play your whole MASKINHALLEN setup.</p></div>
+</div>
+
+<h2 id="demo"><small>18</small>Demo vs full version</h2>
+<p>The free <b>KOLV DEMO</b> sounds exactly like the full version. Locked parts are greyed out with a small padlock.</p>
+<div class="tbl"><table>
+<tr><th></th><th>KOLV DEMO</th><th>KOLV</th></tr>
+<tr><td>Tracks</td><td>5 fixed demo tracks, ◀ ▶ to switch</td><td>Endless: NEW IDEA, SIMILAR, SEED</td></tr>
+<tr><td>Live controls</td><td>CHAOS, ENERGY + AUTO, GROOVE, VOLUME, STYLE, LOCK, LVL, ECHO, CRUSH</td><td>Everything</td></tr>
+<tr><td>Dice &amp; SPARK</td><td>—</td><td>✓</td></tr>
+<tr><td>Kits, sound choice, KOLV synths</td><td>—</td><td>✓ 44 kits, 235 sounds</td></tr>
+<tr><td>Lanes &amp; most of MESS</td><td>—</td><td>✓</td></tr>
+<tr><td>Rack, FX slots, M1–M4</td><td>—</td><td>✓</td></tr>
+<tr><td>LEARN MIDI, LIKE, EXPORT MIDI, MIDI OUT</td><td>—</td><td>✓</td></tr>
+<tr><td>Saves with your project</td><td>—</td><td>✓</td></tr>
+</table></div>
+<p class="noprint"><a class="btn solid" href="https://payhip.com/b/byKko" target="_blank" rel="noopener">Unlock KOLV: €20, or €10 with code JIM.PAA</a></p>
+
+<h2 id="faq"><small>19</small>Troubleshooting</h2>
+<h3>KOLV doesn't show up in my DAW</h3>
+<p>Rescan plugins and search for KOLV under instruments. On Mac, run the install script again: it removes the quarantine that makes macOS hide unsigned plugins. On Windows, check that KOLV.vst3 is in <span class="k">C:\Program Files\Common Files\VST3</span>.</p>
+<h3>"KOLV is damaged" or "can't be opened" on Mac</h3>
+<p>That's macOS blocking an unsigned download. Run <span class="k">bash ~/Downloads/KOLV/installera.command</span> again, or in Terminal: <span class="k">xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/KOLV.vst3</span></p>
+<h3>No sound</h3>
+<p>KOLV only plays when your DAW's transport is running (or PLAY in the standalone app). Check VOLUME and the track levels, and that ENERGY isn't at zero with AUTO off.</p>
+<h3>Only the kick and stab are playing</h3>
+<p>You're in the INTRO. See <a href="#arc">The arc &amp; energy</a>.</p>
+<h3>The pattern keeps changing</h3>
+<p>That's the point, but you're in control: lower CHAOS, set PHRASE to 16 or 32, or LOCK the tracks you want frozen. LIKE pins the whole moment.</p>
+<h3>Crackles or high CPU</h3>
+<p>Loaded VSTs in the rack cost CPU. Use fewer, or use MIDI OUT and put them on their own DAW tracks. A larger audio buffer helps too.</p>
+<h3>Swedish or English labels?</h3>
+<p>Click <span class="k">SV | EN</span> at the top. The choice is shared by every MASKINHALLEN plugin. Saved projects and automation aren't affected.</p>
+
+<footer>
+  <p><b style="color:var(--white)">KOLV</b> · a MASKINHALLEN machine by Phunkshunz AUDIO, Stockholm. Built in a boatyard. Questions or ideas? Write to us through the <a href="https://payhip.com/MASKINHALLEN" target="_blank" rel="noopener">store</a>.</p>
+  <p class="noprint">Tip: print this page or save it as PDF from your browser to keep it next to your studio.</p>
+</footer>
+</main>
+</div>
+</body>
+</html>
