@@ -7,9 +7,12 @@ Hemsida för Phunkshunz AUDIO och techno-serien MASKINHALLEN. Ligger på GitHub 
 - `brand/` har loggan (märket och ordbilden), profilbild, Facebook-omslag och färdiga inlägg.
 - `favicon.svg` är rattmärket. Färger: bakgrund #0e0f11, bärnsten #ffb23f, vit #f2f4f6. Typsnitt: Inter (900 för rubriker) och JetBrains Mono.
 - `site.html` skickar bara vidare till `index.html`.
+- `videos.html` är videosidan. Filerna ligger i `videos/` (en `.mp4` och en `.jpg` med samma namn per video).
 
 ## Ändra saker
 
 - **Köplänkar:** längst ner i `index.html`, `const SHOP = { … }`. Klistra in Payhip-länken för varje maskin. Tom länk = knappen går till hela butiken.
 - **Rabattkod:** sök på `jim.paa` i `index.html`.
 - **Gratis-nedladdningar:** BETONG och GLAPP länkar direkt till senaste GitHub-releasen i sina repon.
+
+- **Ny video:** lägg `namn.mp4` och `namn.jpg` i `videos/`, lägg sedan till en rad i `const VIDEOS = [ … ]` i `videos.html`. Länken blir `videos.html#namn`. Håll filerna små (under ~10 MB), GitHub gillar inte stora filer.
