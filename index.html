@@ -172,6 +172,12 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .reel-hero figcaption b{color:var(--bg);background:var(--amber);padding:2px 8px;border-radius:5px}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-grid h1{font-size:clamp(56px,11vw,150px)}.reel-hero{justify-self:center;max-width:320px}.reel-hero figcaption{font-size:12px;letter-spacing:.04em}}
 @media (prefers-reduced-motion:reduce){.reel-sound{animation:none}}
+.sreel{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:40px;align-items:center;background:var(--well);border:1px solid var(--edge);border-left:4px solid var(--amber);border-radius:16px;padding:28px;margin:0 0 24px}
+.sreel .reel-frame{border-radius:18px}
+.sreel h4{font:900 clamp(34px,5vw,60px)/.95 Inter,sans-serif;letter-spacing:-.02em;color:var(--white);margin:10px 0 14px}
+.sreel h4 span{color:var(--amber)}
+.sreel p{margin:0 0 20px;max-width:520px}
+@media (max-width:760px){.sreel{grid-template-columns:1fr;padding:20px;gap:24px}.sreel .reel-frame{max-width:300px;margin:0 auto;width:100%}}
 </style>
 </head>
 <body>
@@ -355,7 +361,12 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p class="demo-dl">FREE DEMO ↓ <a href="downloads/SPAN-DEMO-macOS.zip" download>Mac</a> · <a href="downloads/SPAN-DEMO-Windows.zip" download>Windows</a> · <a href="downloads/SPAN-DEMO-Linux.zip" download>Linux</a></p>
     <div class="buy"><span class="price">€20</span><a class="btn solid" data-buy="span" href="https://payhip.com/b/IFrN9" target="_blank" rel="noopener">Buy SPÅN</a></div>
   </div>
-</article></div><h3 class="group lbl">Synths &amp; bass</h3><div class="grid"><article class="card rv" id="armering">
+</article></div><h3 class="group lbl">Synths &amp; bass</h3><div class="sreel rv" id="synth-reel">
+  <div class="reel-frame" data-reel><video src="videos/reels/MASKINHALLEN-reel-8-synth-division.mp4" poster="videos/reels/MASKINHALLEN-reel-8-synth-division.jpg" muted loop playsinline preload="none"></video><button class="reel-sound" type="button">🔊 Tap for sound</button></div>
+  <div><span class="lbl">New reel · Synth division</span><h4>Seven synths. <span>Built to hurt.</span></h4>
+  <p>ARMERING, TURBIN, SMIDET, GRUND, SPÅN, FASFEL and ALLANROP over raw 140 BPM acid techno. Every one has a free demo, €20 each, or all 13 machines for €59 with code <b style="color:var(--amber)">EBBOT</b>.</p>
+  <a class="btn solid" href="#armering">See the synths</a></div>
+</div><div class="grid"><article class="card rv" id="armering">
   <a class="shot" href="m/armering.html"><img src="shots/armering-s.webp" alt="ARMERING plugin interface" loading="lazy"><span class="zoom">Read more ↗</span></a>
   <div class="c-body">
     <div class="c-top"><span class="chip">SYNTH</span><span class="chip new">UPDATED</span><span class="plat">Mac + Windows + Linux</span></div>
@@ -544,6 +555,13 @@ function toggle(e){e&&e.stopPropagation();const on=v.muted;if(on&&v.currentTime>
 b.addEventListener('click',toggle);f.addEventListener('click',toggle);
 if('IntersectionObserver'in window&&!rm)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)v.play().catch(()=>{});else v.pause();}),{threshold:.25}).observe(v);
 })();
+</script>
+<script>
+document.querySelectorAll('[data-reel]').forEach(f=>{const v=f.querySelector('video'),b=f.querySelector('.reel-sound');
+function set(on){v.muted=!on;b.classList.toggle('on',on);b.textContent=on?'🔇 Sound off':'🔊 Tap for sound';}
+function tog(e){e.stopPropagation();const on=v.muted;if(on&&v.currentTime>1)v.currentTime=0;set(on);v.play().catch(()=>{});}
+b.addEventListener('click',tog);f.addEventListener('click',tog);
+if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{});}else v.pause();}),{threshold:.35}).observe(v);});
 </script>
 </body>
 </html>
